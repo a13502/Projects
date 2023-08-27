@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block title %}
+        bought
+{% endblock %}
+
+{% block main %}
+    <table action="/buy" class="table" class="table table-hover" class="table table-sm">
+        <thead>
+     <tr>
+      <th scope="col">symbol</th>
+      <th scope="col">name</th>
+      <th scope="col">shares</th>
+      <th scope="col"> price</th>
+      <th scope="col"> total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{{ symbol["symbol"] }}</th>
+      <td>{{ symbol["name"] }}</td>
+      <td>{{ share }}</td>
+      <td>${{ symbol["price"] }}</td>
+      <td>${{ price }}</td>
+    </tr>
+    <tfoot>
+    <tr>
+      <td class="border-0 fw-bold text-end" colspan="4">cash</td>
+      <td class="border-0 text-end">${{ cash }}</td>
+    </tr>
+    <tr>
+        <td class="border-0 fw-bold text-end" colspan="4">TOTAL</td>
+        <td class="border-0 w-bold text-end">{{ total }}</td>
+    </tr>
+  </tfoot>
+        </table>
+{% endblock %}
